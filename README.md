@@ -22,3 +22,26 @@ It is recommended to provide DorkNet with at least two GitHub personal access to
 Dorks
 
 Within the dorks folder are a list of dorks. It is recommended to use the "alldorks.txt" file when mapping out your github secrets attack surface. The "alldorks.txt" is my collection of dorks that i've pulled from various resources.
+
+
+Docker
+
+## Build Command
+docker build -t dorknet .
+
+## Basic Run Command
+docker run -it dorknet
+
+## Run Command
+docker run -it -v $(pwd)/tf:/tf dorknet -tf tf/TOKENSFILE -q exapmle.com -d dorks/DORKFILE -o tesla
+
+## Run Command
+docker run -it -v $(pwd)/tf:/tf w3security/dorknet -tf tf/TOKENSFILE -q exapmle.com -d dorks/DORKFILE -o tesla
+
+Example of the results
+
+Below is an example of the results from running the query "tesla.com" with a small list of dorks.
+
+The following command was run to query for "tesla.com" against a list of dorks:
+
+python3 DorkNet.py -tf TOKENSFILE -q exapmle.com -d Dorks/DORKFILE -o tesla
